@@ -1,0 +1,973 @@
+<html><head><meta charset="utf-8"/><title>Billed Tests</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div id="jesthtml-content"><header><h1 id="title">Billed Tests</h1></header><div id="metadata-container"><div id="timestamp">Started: 2021-12-06 14:55:05</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (11)</div><div class="summary-passed">8 passed</div><div class="summary-failed">3 failed</div><div class="summary-pending summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (40)</div><div class="summary-passed">35 passed</div><div class="summary-failed">5 failed</div><div class="summary-pending summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Bills.js</div><div class="suite-time warn">89.599s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an employee &gt; When I am on Bills Page</div><div class="test-title">Then bill icon in vertical layout should be highlighted</div><div class="test-status">passed</div><div class="test-duration">0.905s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an employee &gt; When I am on Bills Page</div><div class="test-title">Then bills should be ordered from earliest to latest</div><div class="test-status">passed</div><div class="test-duration">0.199s</div></div></div></div></div><div id="suite-2" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Logout.js</div><div class="suite-time warn">179.44s</div></div><div class="suite-tests"><div class="test-result failed"><div class="test-info"><div class="test-suitename">Given I am connected &gt; When I click on disconnect button</div><div class="test-title">Then, I should be sent to login page</div><div class="test-status">failed</div><div class="test-duration">12.096s</div></div><div class="failureMessages"> <pre class="failureMsg">TypeError: Cannot read property 'clear' of undefined
+    at HTMLDivElement.handleClick (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/containers/Logout.js:12:23)
+    at HTMLDivElement.dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jquery/dist/jquery.js:5429:27)
+    at HTMLDivElement.elemData.handle (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jquery/dist/jquery.js:5233:28)
+    at HTMLDivElement.callTheUserObjectsOperation (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+    at innerInvokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+    at invokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+    at HTMLDivElementImpl._dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+    at HTMLDivElementImpl.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+    at HTMLDivElement.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+    at eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:25:20)
+    at Object.eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:27:23)
+    at fireEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:16:35)
+    at Function.fireEvent.(anonymous function) [as click] (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:119:36)
+    at clickElement (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/user-event/dist/click.js:87:20)
+    at Object.click (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/user-event/dist/click.js:121:7)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Logout.js:42:17)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre><pre class="failureMsg">TypeError: Cannot read property 'clear' of undefined
+    at HTMLDivElement.handleClick (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/containers/Logout.js:12:23)
+    at finalReturnValue (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:444:39)
+    at HTMLDivElement.&lt;anonymous&gt; (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:452:13)
+    at HTMLDivElement.mockConstructor (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:103:19)
+    at HTMLDivElement.callTheUserObjectsOperation (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+    at innerInvokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+    at invokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+    at HTMLDivElementImpl._dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+    at HTMLDivElementImpl.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+    at HTMLDivElement.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+    at eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:25:20)
+    at Object.eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:27:23)
+    at fireEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:16:35)
+    at Function.fireEvent.(anonymous function) [as click] (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:119:36)
+    at clickElement (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/user-event/dist/click.js:87:20)
+    at Object.click (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/user-event/dist/click.js:121:7)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Logout.js:42:17)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre><pre class="failureMsg">TestingLibraryElementError: Unable to find an element with the text: Administration. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+&lt;body&gt;
+  
+    
+  &lt;div
+    class="layout"
+  &gt;
+    
+      
+        
+    &lt;div
+      class="vertical-navbar"
+      style="height: 120vh;"
+    &gt;
+      
+          
+      &lt;div
+        class="layout-title"
+      &gt;
+         Billed 
+      &lt;/div&gt;
+      
+            
+      &lt;div
+        data-testid="layout-disconnect"
+        id="layout-disconnect"
+      &gt;
+        
+              
+
+        &lt;svg
+          height="0.255556in"
+          viewBox="0 0 23 23"
+          width="0.255556in"
+          xmlns="http://www.w3.org/2000/svg"
+        &gt;
+          
+  
+          &lt;path
+            d="M 12.78,0.00
+           C 12.78,0.00 10.22,0.00 10.22,0.00
+             10.22,0.00 10.22,12.76 10.22,12.76
+             10.22,12.76 12.78,12.76 12.78,12.76
+             12.78,12.76 12.78,0.00 12.78,0.00 Z
+           M 18.95,2.77
+           C 18.95,2.77 17.14,4.58 17.14,4.58
+             18.17,5.41 19.00,6.46 19.58,7.66
+             20.15,8.85 20.44,10.16 20.44,11.48
+             20.44,13.85 19.50,16.13 17.83,17.80
+             16.15,19.48 13.87,20.42 11.50,20.42
+             9.66,20.42 7.86,19.85 6.35,18.79
+             4.84,17.72 3.70,16.22 3.08,14.48
+             2.46,12.75 2.39,10.86 2.89,9.09
+             3.39,7.31 4.42,5.73 5.86,4.57
+             5.86,4.57 4.05,2.77 4.05,2.77
+             2.90,3.75 1.96,4.94 1.27,6.28
+             0.58,7.62 0.16,9.09 0.04,10.59
+             -0.08,12.10 0.09,13.61 0.55,15.05
+             1.02,16.48 1.76,17.81 2.74,18.96
+             6.85,23.79 14.11,24.37 18.95,20.26
+             20.22,19.18 21.25,17.84 21.94,16.32
+             22.64,14.80 23.00,13.15 23.00,11.48
+             23.00,8.13 21.52,4.94 18.95,2.77 Z"
+            fill="#fff"
+            id="Imported Path"
+            stroke="none"
+            stroke-width="0"
+          /&gt;
+          
+
+        &lt;/svg&gt;
+        
+
+            
+      &lt;/div&gt;
+      
+          
+    &lt;/div&gt;
+    
+        
+      
+    &lt;div
+      class="dashboard-content"
+    &gt;
+      
+        
+      &lt;div
+        class="bills-feed"
+      &gt;
+        
+          
+        &lt;div
+          class="status-bills-header"
+        &gt;
+          
+            
+          &lt;h3&gt;
+             En attente (0) 
+          &lt;/h3&gt;
+          
+            
+          &lt;span
+            class="arrow-icon"
+            data-testid="arrow-icon1"
+            id="arrow-icon1"
+          &gt;
+            
+  
+            &lt;svg
+              height="0.12in"
+              viewBox="0 0 16 11"
+              width="0.18in"
+              xmlns="http://www.w3.org/2000/svg"
+            &gt;
+              
+    
+              &lt;path
+                d="M 14.12,0.45
+          C 14.12,0.45 8.00,6.56 8.00,6.56
+            8.00,6.56 1.88,0.45 1.88,0.45
+            1.88,0.45 0.00,2.33 0.00,2.33
+            0.00,2.33 8.00,10.33 8.00,10.33
+            8.00,10.33 16.00,2.33 16.00,2.33
+            16.00,2.33 14.12,0.45 14.12,0.45 Z"
+                fill="#979797"
+                id="Imported Path"
+                stroke="none"
+                stroke-width="0"
+              /&gt;
+              
+  
+            &lt;/svg&gt;
+            
+
+          &lt;/span&gt;
+          
+          
+        &lt;/div&gt;
+        
+          
+        &lt;div
+          class="status-bills-container"
+          id="status-bills-container1"
+        &gt;
+          
+          
+        &lt;/div&gt;
+        
+          
+            
+        &lt;div
+          class="status-bills-header"
+          style="margin-top: 20px;"
+        &gt;
+          
+              
+          &lt;h3&gt;
+             Validé (0) 
+          &lt;/h3&gt;
+          
+              
+          &lt;span
+            class="arrow-icon"
+            data-testid="arrow-icon2"
+            id="arrow-icon2"
+          &gt;
+            
+  
+            &lt;svg
+              height="0.12in"
+              viewBox="0 0 16 11"
+              width="0.18in"
+              xmlns="http://www.w3.org/2000/svg"
+            &gt;
+              
+    
+              &lt;path
+                d="M 14.12,0.45
+          C 14.12,0.45 8.00,6.56 8.00,6.56
+            8.00,6.56 1.88,0.45 1.88,0.45
+            1.88,0.45 0.00,2.33 0.00,2.33
+            0.00,2.33 8.00,10.33 8.00,10.33
+            8.00,10.33 16.00,2.33 16.00,2.33
+            16.00,2.33 14.12,0.45 14.12,0.45 Z"
+                fill="#979797"
+                id="Imported Path"
+                stroke="none"
+                stroke-width="0"
+              /&gt;
+              
+  
+            &lt;/svg&gt;
+            
+
+          &lt;/span&gt;
+          
+            
+        &lt;/div&gt;
+        
+            
+        &lt;div
+          class="status-bills-container"
+          id="status-bills-container2"
+        &gt;
+          
+            
+        &lt;/div&gt;
+        
+
+            
+        &lt;div
+          class="status-bills-header"
+          style="margin-top: 20px;"
+        &gt;
+          
+              
+          &lt;h3&gt;
+             Refusé (0) 
+          &lt;/h3&gt;
+          
+              
+          &lt;span
+            class="arrow-icon"
+            data-testid="arrow-icon3"
+            id="arrow-icon3"
+          &gt;
+            
+  
+            &lt;svg
+              height="0.12in"
+              viewBox="0 0 16 11"
+              width="0.18in"
+              xmlns="http://www.w3.org/2000/svg"
+            &gt;
+              
+    
+              &lt;path
+                d="M 14.12,0.45
+          C 14.12,0.45 8.00,6.56 8.00,6.56
+            8.00,6.56 1.88,0.45 1.88,0.45
+            1.88,0.45 0.00,2.33 0.00,2.33
+            0.00,2.33 8.00,10.33 8.00,10.33
+            8.00,10.33 16.00,2.33 16.00,2.33
+            16.00,2.33 14.12,0.45 14.12,0.45 Z"
+                fill="#979797"
+                id="Imported Path"
+                stroke="none"
+                stroke-width="0"
+              /&gt;
+              
+  
+            &lt;/svg&gt;
+            
+
+          &lt;/span&gt;
+          
+            
+        &lt;/div&gt;
+        
+            
+        &lt;div
+          class="status-bills-container"
+          id="status-bills-container3"
+        &gt;
+          
+            
+        &lt;/div&gt;
+        
+
+        
+      &lt;/div&gt;
+      
+        
+      &lt;div
+        class="dashboard-right-container"
+      &gt;
+        
+          
+        &lt;h3&gt;
+           Validations 
+        &lt;/h3&gt;
+        
+          
+        &lt;div&gt;
+          &lt;div
+            data-testid="big-billed-icon"
+            id="big-billed-icon"
+          &gt;
+             
+  
+            &lt;svg
+              height="2.86667in"
+              viewBox="0 0 232 258"
+              width="2.57778in"
+              xmlns="http://www.w3.org/2000/svg"
+            &gt;
+              
+  
+              &lt;path
+                d="M 212.25,19.92
+        C 212.25,19.92 193.00,0.67 193.00,0.67
+          193.00,0.67 173.75,19.92 173.75,19.92
+          173.75,19.92 154.50,0.67 154.50,0.67
+          154.50,0.67 135.25,19.92 135.25,19.92
+          135.25,19.92 116.00,0.67 116.00,0.67
+          116.00,0.67 96.75,19.92 96.75,19.92
+          96.75,19.92 77.50,0.67 77.50,0.67
+          77.50,0.67 58.25,19.92 58.25,19.92
+          58.25,19.92 39.00,0.67 39.00,0.67
+          39.00,0.67 19.75,19.92 19.75,19.92
+          19.75,19.92 0.50,0.67 0.50,0.67
+          0.50,0.67 0.50,257.33 0.50,257.33
+          0.50,257.33 19.75,238.08 19.75,238.08
+          19.75,238.08 39.00,257.33 39.00,257.33
+          39.00,257.33 58.25,238.08 58.25,238.08
+          58.25,238.08 77.50,257.33 77.50,257.33
+          77.50,257.33 96.75,238.08 96.75,238.08
+          96.75,238.08 116.00,257.33 116.00,257.33
+          116.00,257.33 135.25,238.08 135.25,238.08
+          135.25,238.08 154.50,257.33 154.50,257.33
+          154.50,257.33 173.75,238.08 173.75,238.08
+          173.75,238.08 193.00,257.33 193.00,257.33
+          193.00,257.33 212.25,238.08 212.25,238.08
+          212.25,238.08 231.50,257.33 231.50,257.33
+          231.50,257.33 231.50,0.67 231.50,0.67
+          231.50,0.67 212.25,19.92 212.25,19.92 Z
+        M 205.83,219.99
+        C 205.83,219.99 26.17,219.99 26.17,219.99
+          26.17,219.99 26.17,38.01 26.17,38.01
+          26.17,38.01 205.83,38.01 205.83,38.01
+          205.83,38.01 205.83,219.99 205.83,219.99 Z
+        M 39.00,167.50
+        C 39.00,167.50 193.00,167.50 193.00,167.50
+          193.00,167.50 193.00,193.17 193.00,193.17
+          193.00,193.17 39.00,193.17 39.00,193.17
+          39.00,193.17 39.00,167.50 39.00,167.50 Z
+        M 39.00,116.17
+        C 39.00,116.17 193.00,116.17 193.00,116.17
+          193.00,116.17 193.00,141.83 193.00,141.83
+          193.00,141.83 39.00,141.83 39.00,141.83
+          39.00,141.83 39.00,116.17 39.00,116.17 Z
+        M 39.00,64.83
+        C 39.00,64.83 193.00,64.83 193.00,64.83
+          193.00,64.83 193.00,90.50 193.00,90.50
+          193.00,90.50 39.00,90.50 39.00,90.50
+          39.00,90.50 39.00,64.83 39.00,64.83 Z"
+                fill="#eaeaea"
+                id="Imported Path"
+                stroke="none"
+                stroke-width="0"
+              /&gt;
+              
+  
+            &lt;/svg&gt;
+            
+ 
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+      
+      &lt;/div&gt;
+      
+    
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    at Object.getElementError (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:37:19)
+    at args (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/query-helpers.js:92:38)
+    at args (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/query-helpers.js:64:17)
+    at getByText (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/query-helpers.js:108:19)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Logout.js:44:21)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre></div></div></div></div><div id="suite-3" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js</div><div class="suite-time warn">264.513s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do not fill fields and I click on employee button Login In</div><div class="test-title">Then It should renders Login page</div><div class="test-status">passed</div><div class="test-duration">1.541s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do fill fields in incorrect format and I click on employee button Login In</div><div class="test-title">Then It should renders Login page</div><div class="test-status">passed</div><div class="test-duration">0.202s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do fill fields in correct format and I click on employee button Login In</div><div class="test-title">Then I should be identified as an Employee in app</div><div class="test-status">failed</div><div class="test-duration">2.673s</div></div><div class="failureMessages"> <pre class="failureMsg">TypeError: Cannot read property 'setItem' of undefined
+    at HTMLFormElement.handleSubmitEmployee (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/containers/Login.js:34:23)
+    at HTMLFormElement.callTheUserObjectsOperation (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+    at innerInvokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+    at invokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+    at HTMLFormElementImpl._dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+    at HTMLFormElementImpl.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+    at HTMLFormElement.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+    at eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:25:20)
+    at Object.eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:27:23)
+    at fireEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:16:35)
+    at Function.submit (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:119:36)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:93:15)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre><pre class="failureMsg">TypeError: Cannot read property 'setItem' of undefined
+    at HTMLFormElement.handleSubmitEmployee (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/containers/Login.js:34:23)
+    at finalReturnValue (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:444:39)
+    at HTMLFormElement.&lt;anonymous&gt; (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:452:13)
+    at HTMLFormElement.mockConstructor (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:103:19)
+    at HTMLFormElement.callTheUserObjectsOperation (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+    at innerInvokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+    at invokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+    at HTMLFormElementImpl._dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+    at HTMLFormElementImpl.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+    at HTMLFormElement.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+    at eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:25:20)
+    at Object.eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:27:23)
+    at fireEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:16:35)
+    at Function.submit (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:119:36)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:93:15)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre><pre class="failureMsg">Error: expect(jest.fn()).toHaveBeenCalled()
+
+Expected number of calls: &gt;= 1
+Received number of calls:    0
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:95:43)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do fill fields in correct format and I click on employee button Login In</div><div class="test-title">It should renders Bills page</div><div class="test-status">failed</div><div class="test-duration">0.017s</div></div><div class="failureMessages"> <pre class="failureMsg">TestingLibraryElementError: Unable to find an element with the text: Mes notes de frais. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+&lt;body&gt;
+  
+      
+  &lt;div
+    class="page-div"
+  &gt;
+    
+        
+    &lt;div
+      class="row"
+    &gt;
+      
+          
+      &lt;div
+        class="title-container"
+      &gt;
+         
+            
+        &lt;svg
+          class="bi bi-receipt"
+          fill="currentColor"
+          height="3em"
+          viewBox="0 0 16 16"
+          width="3em"
+          xmlns="http://www.w3.org/2000/svg"
+        &gt;
+          
+              
+          &lt;path
+            d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"
+            fill-rule="evenodd"
+          /&gt;
+          
+              
+          &lt;path
+            d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"
+            fill-rule="evenodd"
+          /&gt;
+          
+            
+        &lt;/svg&gt;
+        
+            
+        &lt;h1&gt;
+           Billed 
+        &lt;/h1&gt;
+        
+          
+      &lt;/div&gt;
+      
+        
+    &lt;/div&gt;
+    
+        
+    &lt;div
+      class="row"
+    &gt;
+      
+          
+      &lt;div
+        class="col-sm-6"
+      &gt;
+        
+            
+        &lt;div
+          class="card"
+        &gt;
+          
+              
+          &lt;div
+            class="card-body"
+          &gt;
+            
+                
+            &lt;form
+              class="form-signin"
+              data-testid="form-employee"
+            &gt;
+              
+                  
+              &lt;h2
+                class="h3 mb-3 font-weight-normal"
+              &gt;
+                Employé
+              &lt;/h2&gt;
+              
+                  
+              &lt;label
+                for="inputEmail"
+              &gt;
+                Votre email
+              &lt;/label&gt;
+              
+                  
+              &lt;input
+                autofocus=""
+                class="form-control"
+                data-testid="employee-email-input"
+                placeholder="johndoe@email.com"
+                required=""
+                type="email"
+              /&gt;
+              
+                  
+              &lt;label
+                for="inputPassword"
+              &gt;
+                Mot de passe
+              &lt;/label&gt;
+              
+                  
+              &lt;input
+                class="form-control"
+                data-testid="employee-password-input"
+                placeholder="******"
+                required=""
+                type="password"
+              /&gt;
+              
+                  
+              &lt;button
+                class="btn btn-lg btn-primary btn-block"
+                data-testid="employee-login-button"
+                style="background-color: #0E5AE5;"
+                type="submit"
+              &gt;
+                Se connecter
+              &lt;/button&gt;
+              
+                
+            &lt;/form&gt;
+            
+              
+          &lt;/div&gt;
+          
+            
+        &lt;/div&gt;
+        
+          
+      &lt;/div&gt;
+      
+          
+      &lt;div
+        class="col-sm-6"
+      &gt;
+        
+            
+        &lt;div
+          class="card"
+        &gt;
+          
+              
+          &lt;div
+            class="card-body"
+          &gt;
+            
+                
+            &lt;form
+              class="form-signin"
+              data-testid="form-admin"
+            &gt;
+              
+                  
+              &lt;h2
+                class="h3 mb-3 font-weight-normal"
+              &gt;
+                Administration
+              &lt;/h2&gt;
+              
+                  
+              &lt;label
+                for="inputEmail"
+              &gt;
+                Votre email
+              &lt;/label&gt;
+              
+                  
+              &lt;input
+                autofocus=""
+                class="form-control"
+                data-testid="admin-email-input"
+                placeholder="johndoe@email.com"
+                required=""
+                type="email"
+              /&gt;
+              
+                  
+              &lt;label
+                for="inputPassword"
+              &gt;
+                Mot de passe
+              &lt;/label&gt;
+              
+                  
+              &lt;input
+                class="form-control"
+                data-testid="admin-password-input"
+                placeholder="******"
+                required=""
+                type="password"
+              /&gt;
+              
+                  
+              &lt;button
+                class="btn btn-lg btn-primary btn-block"
+                data-testid="admin-login-button"
+                style="background-color: #0E5AE5;"
+                type="submit"
+              &gt;
+                Se connecter
+              &lt;/button&gt;
+              
+                
+            &lt;/form&gt;
+            
+              
+          &lt;/div&gt;
+          
+            
+        &lt;/div&gt;
+        
+          
+      &lt;/div&gt;
+      
+        
+    &lt;/div&gt;
+    
+      
+  &lt;/div&gt;
+  
+  
+&lt;/body&gt;
+    at Object.getElementError (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:37:19)
+    at args (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/query-helpers.js:92:38)
+    at getAllByText (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/query-helpers.js:127:15)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:108:21)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do not fill fields and I click on admin button Login In</div><div class="test-title">Then It should renders Login page</div><div class="test-status">passed</div><div class="test-duration">0.25s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do fill fields in incorrect format and I click on admin button Login In</div><div class="test-title">Then it should renders Login page</div><div class="test-status">passed</div><div class="test-duration">0.109s</div></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do fill fields in correct format and I click on admin button Login In</div><div class="test-title">Then I should be identified as an HR admin in app</div><div class="test-status">failed</div><div class="test-duration">0.016s</div></div><div class="failureMessages"> <pre class="failureMsg">TypeError: Cannot read property 'setItem' of undefined
+    at HTMLFormElement.handleSubmitAdmin (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/containers/Login.js:55:23)
+    at HTMLFormElement.callTheUserObjectsOperation (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+    at innerInvokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+    at invokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+    at HTMLFormElementImpl._dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+    at HTMLFormElementImpl.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+    at HTMLFormElement.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+    at eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:25:20)
+    at Object.eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:27:23)
+    at fireEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:16:35)
+    at Function.submit (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:119:36)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:204:17)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre><pre class="failureMsg">TypeError: Cannot read property 'setItem' of undefined
+    at HTMLFormElement.handleSubmitAdmin (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/containers/Login.js:55:23)
+    at finalReturnValue (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:444:39)
+    at HTMLFormElement.&lt;anonymous&gt; (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:452:13)
+    at HTMLFormElement.mockConstructor (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-mock/build/index.js:103:19)
+    at HTMLFormElement.callTheUserObjectsOperation (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+    at innerInvokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+    at invokeEventListeners (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+    at HTMLFormElementImpl._dispatch (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+    at HTMLFormElementImpl.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+    at HTMLFormElement.dispatchEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+    at eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:25:20)
+    at Object.eventWrapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/config.js:27:23)
+    at fireEvent (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:16:35)
+    at Function.submit (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/@testing-library/dom/dist/events.js:119:36)
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:204:17)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre><pre class="failureMsg">Error: expect(jest.fn()).toHaveBeenCalled()
+
+Expected number of calls: &gt;= 1
+Received number of calls:    0
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:206:45)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre></div></div><div class="test-result failed"><div class="test-info"><div class="test-suitename">Given that I am a user on login page &gt; When I do fill fields in correct format and I click on admin button Login In</div><div class="test-title">It should renders HR dashboard page</div><div class="test-status">failed</div><div class="test-duration">0.003s</div></div><div class="failureMessages"> <pre class="failureMsg">Error: expect(received).toBeTruthy()
+
+Received: null
+    at Object.test (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Login.js:219:49)
+    at Object.asyncJestTest (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at resolve (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:45:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at promise.then (/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/node_modules/jest-jasmine2/build/queueRunner.js:75:41)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre></div></div></div></div><div id="suite-4" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Actions.js</div><div class="suite-time warn">333.554s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Employee &gt; When I am on Bills page and there are bills</div><div class="test-title">Then, it should render icon eye</div><div class="test-status">passed</div><div class="test-duration">0.074s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Employee &gt; When I am on Bills page and there are bills with url for file</div><div class="test-title">Then, it should save given url in data-bill-url custom attribute</div><div class="test-status">passed</div><div class="test-duration">0.168s</div></div></div></div></div><div id="suite-5" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/Dashboard.js</div><div class="suite-time warn">255.309s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page, there are bills, and there is one pending</div><div class="test-title">Then, filteredBills by pending status should return 1 bill</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page, there are bills, and there is one accepted</div><div class="test-title">Then, filteredBills by accepted status should return 1 bill</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page, there are bills, and there is two refused</div><div class="test-title">Then, filteredBills by accepted status should return 2 bills</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page but it is loading</div><div class="test-title">Then, Loading page should be rendered</div><div class="test-status">passed</div><div class="test-duration">0.009s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page but back-end send an error message</div><div class="test-title">Then, Error page should be rendered</div><div class="test-status">passed</div><div class="test-duration">0.008s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page and I click on arrow</div><div class="test-title">Then, tickets list should be unfolding, and cars should contain first and lastname</div><div class="test-status">passed</div><div class="test-duration">1.636s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard page and I click on edit icon of a card</div><div class="test-title">Then, right form should be filled</div><div class="test-status">passed</div><div class="test-duration">0.037s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin &gt; When I am on Dashboard and there are no bills</div><div class="test-title">Then, no cards should be shown</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as Admin, and I am on Dashboard page, and I clicked on a pending bill &gt; When I click on accept button</div><div class="test-title">I should be sent on Dashboard with big billed icon instead of form</div><div class="test-status">passed</div><div class="test-duration">0.047s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as Admin, and I am on Dashboard page, and I clicked on a pending bill &gt; When I click on refuse button</div><div class="test-title">I should be sent on Dashboard with big billed icon instead of form</div><div class="test-status">passed</div><div class="test-duration">0.033s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as Admin and I am on Dashboard page and I clicked on a bill &gt; When I click on the icon eye</div><div class="test-title">A modal should open</div><div class="test-status">passed</div><div class="test-duration">0.099s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am a user connected as Admin &gt; When I navigate to Dashboard</div><div class="test-title">fetches bills from mock API GET</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am a user connected as Admin &gt; When I navigate to Dashboard</div><div class="test-title">fetches bills from an API and fails with 404 message error</div><div class="test-status">passed</div><div class="test-duration">0.005s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am a user connected as Admin &gt; When I navigate to Dashboard</div><div class="test-title">fetches messages from an API and fails with 500 message error</div><div class="test-status">passed</div><div class="test-duration">0.005s</div></div></div></div></div><div id="suite-6" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/ErrorPage.js</div><div class="suite-time warn">354.083s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected on app (as an Employee or an HR admin) &gt; When ErrorPage is called without and error in its signature</div><div class="test-title">Then, it should render ErrorPage with no error message</div><div class="test-status">passed</div><div class="test-duration">0.646s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected on app (as an Employee or an HR admin) &gt; When ErrorPage is called with error message in its signature</div><div class="test-title">Then, it should render ErrorPage with its error message</div><div class="test-status">passed</div><div class="test-duration">0.006s</div></div></div></div></div><div id="suite-7" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/routes.js</div><div class="suite-time warn">302.728s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected and I am on some page of the app &gt; When I navigate to Login page</div><div class="test-title">Then, it should render Login page</div><div class="test-status">passed</div><div class="test-duration">0.419s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected and I am on some page of the app &gt; When I navigate to Bills page</div><div class="test-title">Then, it should render Bills page</div><div class="test-status">passed</div><div class="test-duration">0.018s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected and I am on some page of the app &gt; When I navigate to NewBill page</div><div class="test-title">Then, it should render NewBill page</div><div class="test-status">passed</div><div class="test-duration">0.03s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected and I am on some page of the app &gt; When I navigate to Dashboard</div><div class="test-title">Then, it should render Dashboard page</div><div class="test-status">passed</div><div class="test-duration">0.016s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected and I am on some page of the app &gt; When I navigate to anywhere else other than Login, Bills, NewBill, Dashboard</div><div class="test-title">Then, it should render Loginpage</div><div class="test-status">passed</div><div class="test-duration">0.014s</div></div></div></div></div><div id="suite-8" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/DashboardFormUI.js</div><div class="suite-time warn">301.037s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin and I am on Dashboard Page &gt; When bill data is passed to DashboardUI</div><div class="test-title">Then, it should them in the page</div><div class="test-status">passed</div><div class="test-duration">2.832s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin and I am on Dashboard Page &gt; When pending bill is passed to DashboardUI</div><div class="test-title">Then, it should show button and textArea</div><div class="test-status">passed</div><div class="test-duration">0.031s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin and I am on Dashboard Page &gt; When accepted bill is passed to DashboardUI</div><div class="test-title">Then, it should show admin commentary</div><div class="test-status">passed</div><div class="test-duration">0.02s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as an Admin and I am on Dashboard Page &gt; When acceptrefuseded bill is passed to DashboardUI</div><div class="test-title">Then, it should show admin commentary</div><div class="test-status">passed</div><div class="test-duration">0.024s</div></div></div></div></div><div id="suite-9" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/VerticalLayout.js</div><div class="suite-time warn">192.615s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected as Employee</div><div class="test-title">Then Icons should be rendered</div><div class="test-status">passed</div><div class="test-duration">0.088s</div></div></div></div></div><div id="suite-10" class="suite-container"><div class="suite-info"><div class="suite-path">/home/romin/Documents/CODE/OC/P9_RM/RominManogil_09_22112021/Billed-app-FR/src/__tests__/LoadingPage.js</div><div class="suite-time warn">163.137s</div></div><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Given I am connected on app (as an Employee or an HR admin) &gt; When LoadingPage is called</div><div class="test-title">Then, it should render Loading...</div><div class="test-status">passed</div><div class="test-duration">0.038s</div></div></div></div></div></div></body></html>

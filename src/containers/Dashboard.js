@@ -1,7 +1,11 @@
-import { formatDate } from '../app/format.js'
+import {
+  formatDate
+} from '../app/format.js'
 import DashboardFormUI from '../views/DashboardFormUI.js'
-import BigBilledIcon from '../assets/svg/big_billed.js'
-import { ROUTES_PATH } from '../constants/routes.js'
+// import BigBilledIcon from '../assets/svg/big_billed.js'
+import {
+  ROUTES_PATH
+} from '../constants/routes.js'
 import USERS_TEST from '../constants/usersTest.js'
 import Logout from "./Logout.js"
 
@@ -9,7 +13,12 @@ export const filteredBills = (data, status) => {
   return (data && data.length) ?
     data.filter(bill => {
 
-      let selectCondition
+      let selectCondition;
+      let billRegex = /^\d{4}-\d{2}-\d{2}$/; // regex : date format have to be "0000-00-00"
+
+      if (!billRegex.test(bill.date)) { // if date do not respect the regex, the bill is not sent
+        return false;
+      };
 
       // in jest environment
       if (typeof jest !== 'undefined') {
@@ -18,8 +27,7 @@ export const filteredBills = (data, status) => {
         // in prod environment
         const userEmail = JSON.parse(localStorage.getItem("user")).email
         selectCondition =
-          (bill.status === status) &&
-          [...USERS_TEST, userEmail].includes(bill.email)
+          (bill.status === status) && [...USERS_TEST, userEmail].includes(bill.email)
       }
 
       return selectCondition
@@ -31,7 +39,7 @@ export const card = (bill) => {
   const firstName = firstAndLastNames.includes('.') ?
     firstAndLastNames.split('.')[0] : ''
   const lastName = firstAndLastNames.includes('.') ?
-  firstAndLastNames.split('.')[1] : firstAndLastNames
+    firstAndLastNames.split('.')[1] : firstAndLastNames
 
   return (`
     <div class='bill-card' id='open-bill${bill.id}' data-testid='open-bill${bill.id}'>
@@ -67,15 +75,25 @@ export const getStatus = (index) => {
 }
 
 export default class {
-  constructor({ document, onNavigate, firestore, bills, localStorage }) {
-    this.document = document
-    this.onNavigate = onNavigate
-    this.firestore = firestore
+  constructor({
+    document,
+    onNavigate,
+    firestore,
+    bills,
+    localStorage
+  }) {
+    this.document = document;
+    this.onNavigate = onNavigate;
+    this.firestore = firestore;
+
     $('#arrow-icon1').click((e) => this.handleShowTickets(e, bills, 1))
     $('#arrow-icon2').click((e) => this.handleShowTickets(e, bills, 2))
     $('#arrow-icon3').click((e) => this.handleShowTickets(e, bills, 3))
     this.getBillsAllUsers()
-    new Logout({ localStorage, onNavigate })
+    new Logout({
+      localStorage,
+      onNavigate
+    })
   }
 
   handleClickIconEye() {
@@ -90,21 +108,34 @@ export default class {
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
     if (this.counter % 2 === 0) {
       bills.forEach(b => {
-        $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
+        $(`#open-bill${b.id}`).css({
+          background: '#0D5AE5'
+        })
       })
-      $(`#open-bill${bill.id}`).css({ background: '#2A2B35' })
+      $(`#open-bill${bill.id}`).css({
+        background: '#2A2B35'
+      })
       $('.dashboard-right-container div').html(DashboardFormUI(bill))
-      $('.vertical-navbar').css({ height: '150vh' })
-      this.counter ++
-    } else {
-      $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
+      $('.vertical-navbar').css({
+        height: '150vh'
+      })
+      this.counter++
+    } 
+    /*else {
+      $(`#open-bill${bill.id}`).css({
+        background: '#0D5AE5'
+      })
 
       $('.dashboard-right-container div').html(`
         <div id="big-billed-icon"> ${BigBilledIcon} </div>
       `)
-      $('.vertical-navbar').css({ height: '120vh' })
-      this.counter ++
-    }
+      $('.vertical-navbar').css({
+        height: '120vh'
+      })
+      this.counter++
+    }*/
+
+
     $('#icon-eye-d').click(this.handleClickIconEye)
     $('#btn-accept-bill').click((e) => this.handleAcceptSubmit(e, bill))
     $('#btn-refuse-bill').click((e) => this.handleRefuseSubmit(e, bill))
@@ -134,15 +165,19 @@ export default class {
     if (this.counter === undefined || this.index !== index) this.counter = 0
     if (this.index === undefined || this.index !== index) this.index = index
     if (this.counter % 2 === 0) {
-      $(`#arrow-icon${this.index}`).css({ transform: 'rotate(0deg)'})
+      $(`#arrow-icon${this.index}`).css({
+        transform: 'rotate(0deg)'
+      })
       $(`#status-bills-container${this.index}`)
         .html(cards(filteredBills(bills, getStatus(this.index))))
-      this.counter ++
+      this.counter++
     } else {
-      $(`#arrow-icon${this.index}`).css({ transform: 'rotate(90deg)'})
+      $(`#arrow-icon${this.index}`).css({
+        transform: 'rotate(90deg)'
+      })
       $(`#status-bills-container${this.index}`)
         .html("")
-      this.counter ++
+      this.counter++
     }
 
     bills.forEach(bill => {
@@ -157,30 +192,30 @@ export default class {
   getBillsAllUsers() {
     if (this.firestore) {
       return this.firestore
-      .bills()
-      .get()
-      .then(snapshot => {
-        const bills = snapshot.docs
-        .map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-          date: doc.data().date,
-          status: doc.data().status
-        }))
-        return bills
-      })
-      .catch(console.log)
+        .bills()
+        .get()
+        .then(snapshot => {
+          const bills = snapshot.docs
+            .map(doc => ({
+              id: doc.id,
+              ...doc.data(),
+              date: doc.data().date,
+              status: doc.data().status
+            }))
+          return bills
+        })
+        .catch(console.log)
     }
   }
-    
+
   // not need to cover this function by tests
   updateBill(bill) {
     if (this.firestore) {
-    return this.firestore
-      .bill(bill.id)
-      .update(bill)
-      .then(bill => bill)
-      .catch(console.log)
+      return this.firestore
+        .bill(bill.id)
+        .update(bill)
+        .then(bill => bill)
+        .catch(console.log)
     }
   }
 }
