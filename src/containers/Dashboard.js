@@ -78,7 +78,7 @@ export default class {
     new Logout({ localStorage, onNavigate })
   }
 
-  handleClickIconEye = () => {
+  handleClickIconEye() {
     const billUrl = $('#icon-eye-d').attr("data-bill-url")
     const imgWidth = Math.floor($('#modaleFileAdmin1').width() * 0.8)
     $('#modaleFileAdmin1').find(".modal-body").html(`<div style='text-align: center;'><img width=${imgWidth} src=${billUrl} /></div>`)
@@ -110,7 +110,7 @@ export default class {
     $('#btn-refuse-bill').click((e) => this.handleRefuseSubmit(e, bill))
   }
 
-  handleAcceptSubmit = (e, bill) => {
+  handleAcceptSubmit(e, bill) {
     const newBill = {
       ...bill,
       status: 'accepted',
@@ -120,7 +120,7 @@ export default class {
     this.onNavigate(ROUTES_PATH['Dashboard'])
   }
 
-  handleRefuseSubmit = (e, bill) => {
+  handleRefuseSubmit(e, bill) {
     const newBill = {
       ...bill,
       status: 'refused',
@@ -154,7 +154,7 @@ export default class {
   }
 
   // not need to cover this function by tests
-  getBillsAllUsers = () => {
+  getBillsAllUsers() {
     if (this.firestore) {
       return this.firestore
       .bills()
@@ -174,7 +174,7 @@ export default class {
   }
     
   // not need to cover this function by tests
-  updateBill = (bill) => {
+  updateBill(bill) {
     if (this.firestore) {
     return this.firestore
       .bill(bill.id)

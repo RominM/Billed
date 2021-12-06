@@ -15,7 +15,7 @@ export default class Login {
     const formAdmin = this.document.querySelector(`form[data-testid="form-admin"]`)
     formAdmin.addEventListener("submit", this.handleSubmitAdmin)
   }
-  handleSubmitEmployee = e => {
+  handleSubmitEmployee(e) {
     const user = {
       type: "Employee",
       email: e.target.querySelector(`input[data-testid="employee-email-input"]`).value,
@@ -32,11 +32,11 @@ export default class Login {
     this.document.body.style.backgroundColor="#fff"
   }
 
-  handleSubmitAdmin = e => {
+  handleSubmitAdmin(e) {
     const user = {
       type: "Admin",
-      email: e.target.querySelector(`input[data-testid="employee-email-input"]`).value,
-      password: e.target.querySelector(`input[data-testid="employee-password-input"]`).value,
+      email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value,
+      password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
       status: "connected"
     }
     this.localStorage.setItem("user", JSON.stringify(user))
@@ -50,7 +50,7 @@ export default class Login {
   }
 
   // not need to cover this function by tests
-  checkIfUserExists = (user) => {
+  checkIfUserExists(user) {
     if (this.firestore) {
       this.firestore
       .user(user.email)
@@ -70,7 +70,7 @@ export default class Login {
   }
 
   // not need to cover this function by tests
-  createUser = (user) => {
+  createUser(user) {
     if (this.firestore) {
       this.firestore
       .users()
