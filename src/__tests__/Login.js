@@ -2,7 +2,9 @@ import LoginUI from "../views/LoginUI"
 import Login from '../containers/Login.js'
 import { ROUTES } from "../constants/routes"
 import { fireEvent, screen } from "@testing-library/dom"
-
+/**
+ * @jest-environment jsdom
+ */
 describe("Given that I am a user on login page", () => {
   describe("When I do not fill fields and I click on employee button Login In", () => {
     test("Then It should renders Login page", () => {
@@ -46,15 +48,15 @@ describe("Given that I am a user on login page", () => {
 
   describe("When I do fill fields in correct format and I click on employee button Login In", () => {
     test("Then I should be identified as an Employee in app", () => {
-      document.body.innerHTML = LoginUI()
+      document.body.innerHTML = LoginUI();
     const inputData = {
       email: "johndoe@email.com",
       password: "azerty"
-    }
+    };
 
-    const inputEmailUser = screen.getByTestId("employee-email-input")
-    fireEvent.change(inputEmailUser, { target: { value: inputData.email } })
-    expect(inputEmailUser.value).toBe(inputData.email)
+    const inputEmailUser = screen.getByTestId("employee-email-input");
+    fireEvent.change(inputEmailUser, { target: { value: inputData.email } });
+    expect(inputEmailUser.value).toBe(inputData.email);
         
     const inputPasswordUser = screen.getByTestId("employee-password-input")
     fireEvent.change(inputPasswordUser, { target: { value: inputData.password } })
@@ -102,7 +104,7 @@ describe("Given that I am a user on login page", () => {
           status: "connected"
         })
       )
-    })  
+    })
 
     test("It should renders Bills page", () => {
       expect(screen.getAllByText('Mes notes de frais')).toBeTruthy()

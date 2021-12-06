@@ -14,13 +14,16 @@ export default class NewBill {
     this.fileUrl = null
     this.fileName = null
     new Logout({ document, localStorage, onNavigate })
-  }
-  handleChangeFile = e => {
+  };
+
+  handleChangeFile(e) {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
-    this.firestore
-      .storage
+  
+
+    if (this.validFileType(fileType)) {
+    this.firestore.storage
       .ref(`justificatifs/${fileName}`)
       .put(file)
       .then(snapshot => snapshot.ref.getDownloadURL())
@@ -28,8 +31,18 @@ export default class NewBill {
         this.fileUrl = url
         this.fileName = fileName
       })
+    } else {
+      document.querySelector(`input[data-testid="file"]`).value = null
+      this.fileUrl = null
+      this.fileName = null
+      window.alert('Seuls les fichiers de type "jpg", "jpeg" ou "png" sont autorisés.')
+    }
+
+
   }
-  handleSubmit = e => {
+
+
+  handleSubmit(e) {
     e.preventDefault()
     console.log('e.target.querySelector(`input[data-testid="datepicker"]`).value', e.target.querySelector(`input[data-testid="datepicker"]`).value)
     const email = JSON.parse(localStorage.getItem("user")).email
@@ -51,7 +64,7 @@ export default class NewBill {
   }
 
   // not need to cover this function by tests
-  createBill = (bill) => {
+  createBill(bill) {
     if (this.firestore) {
       this.firestore
       .bills()
