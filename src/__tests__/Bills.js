@@ -16,6 +16,12 @@ describe("Given I am connected as an employee", () => {
 
         document.body.innerHTML = `<div id="root"></div>`;
     });
+
+
+
+
+
+    
     test("Then bills should be ordered from earliest to latest", () => {
       const html = BillsUI({ data: bills })
       document.body.innerHTML = html
