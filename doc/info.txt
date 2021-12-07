@@ -1,5 +1,9 @@
 ERREURS IDENTIFIE:
 
+// src/views/BillsUI.js
+      => rows
+         => add .sort() methode to get date in good ordre
+         
 // all of documents,
       => whene is a class
          => change syntaxe
@@ -7,7 +11,3 @@ ERREURS IDENTIFIE:
 // src/containers/Login.js
       => handleSubmitAdmin
          => email & password querySelector the wrong input[data-testid]
-
-// src/views/BillsUI.js
-      => rows
-         => add .sort() methode to get date in good ordre
