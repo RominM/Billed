@@ -27,7 +27,7 @@ describe("Given that I am a user on login page", () => {
 
   describe("When I do fill fields in incorrect format and I click on employee button Login In", () => {
     test("Then It should renders Login page", () => {
-      document.body.innerHTML = LoginUI()
+      document.body.innerHTML = LoginUI();
 
       const inputEmailUser = screen.getByTestId("employee-email-input")
       fireEvent.change(inputEmailUser, { target: { value: "pasunemail" } })
@@ -106,10 +106,17 @@ describe("Given that I am a user on login page", () => {
       )
     })
 
+/**
+ * describe("Lorsque je remplis les champs au format correct et que je clique sur le bouton Employé Connexion", () => {
+ *    test("Cela devrait afficher la page des factures", () => {
+ *        verifie si la string ('Mes notes de frais')apparait
+ *        }
+ *    )}
+ * )
+ */
     test("It should renders Bills page", () => {
       expect(screen.getAllByText('Mes notes de frais')).toBeTruthy()
     })
-
   })
 })
 
