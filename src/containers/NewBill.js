@@ -22,7 +22,7 @@ export default class NewBill {
     const fileName = filePath[filePath.length-1]
   
 
-    if (this.validFileType(fileType)) {
+    // if (this.validFileType(fileType)) {
     this.firestore.storage
       .ref(`justificatifs/${fileName}`)
       .put(file)
@@ -31,12 +31,12 @@ export default class NewBill {
         this.fileUrl = url
         this.fileName = fileName
       })
-    } else {
-      document.querySelector(`input[data-testid="file"]`).value = null
-      this.fileUrl = null
-      this.fileName = null
-      window.alert('Seuls les fichiers de type "jpg", "jpeg" ou "png" sont autorisés.')
-    }
+    // } else {
+    //   document.querySelector(`input[data-testid="file"]`).value = null
+    //   this.fileUrl = null
+    //   this.fileName = null
+    //   window.alert('Seuls les fichiers de type "jpg", "jpeg" ou "png" sont autorisés.')
+    // }
 
 
   }

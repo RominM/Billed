@@ -14,11 +14,11 @@ export const filteredBills = (data, status) => {
     data.filter(bill => {
 
       let selectCondition;
-      let billRegex = /^\d{4}-\d{2}-\d{2}$/; // regex : date format have to be "0000-00-00"
+      // let billRegex = /^\d{4}-\d{2}-\d{2}$/; // regex : date format have to be "0000-00-00"
 
-      if (!billRegex.test(bill.date)) { // if date do not respect the regex, the bill is not sent
-        return false;
-      };
+      // if (!billRegex.test(bill.date)) { // if date do not respect the regex, the bill is not sent
+      //   return false;
+      // };
 
       // in jest environment
       if (typeof jest !== 'undefined') {
