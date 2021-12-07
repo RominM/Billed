@@ -1,0 +1,13 @@
+ERREURS IDENTIFIE:
+
+// all of documents,
+      => whene is a class
+         => change syntaxe
+
+// src/containers/Login.js
+      => handleSubmitAdmin
+         => email & password querySelector the wrong input[data-testid]
+
+// src/views/BillsUI.js
+      => rows
+         => add .sort() methode to get date in good ordre
