@@ -1,4 +1,3 @@
-
 import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
 
@@ -7,6 +6,7 @@ export default class NewBill {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
+
     const formNewBill = this.document.querySelector(`form[data-testid="form-new-bill"]`)
     formNewBill.addEventListener("submit", this.handleSubmit)
     const file = this.document.querySelector(`input[data-testid="file"]`)
@@ -14,37 +14,41 @@ export default class NewBill {
     this.fileUrl = null
     this.fileName = null
     new Logout({ document, localStorage, onNavigate })
-  };
-
-  handleChangeFile(e) {
+    //Création du msg d'erreur
+    const error = this.document.createElement('p')
+    const label = document.querySelector(`div[data-testid="errorMessag"]`)
+    label.appendChild(error)
+    error.textContent="⚠ Veuillez choisir un format png, jpg ou jpeg"
+    error.setAttribute("id", "errorMessagId")
+    error.style.display="none"
+  }
+  handleChangeFile = e => {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
-    const filePath = e.target.value.split(/\\/g)
-    const fileName = filePath[filePath.length-1]
-  
-
-    if (this.validFileType(fileType)) {
-    this.firestore.storage
-      .ref(`justificatifs/${fileName}`)
+    const fileName = file.name
+    const extension = fileName.split(".").pop()
+    let error=document.getElementById("errorMessagId")
+    
+    // 3eme erreur [Bug Hunt] - Bills
+    if(extension === 'jpg' || extension === 'jpeg' || extension === 'png') {
+    this.firestore
+      .storage
+      .ref(`justificatifs/${file.name}`)
       .put(file)
       .then(snapshot => snapshot.ref.getDownloadURL())
       .then(url => {
         this.fileUrl = url
-        this.fileName = fileName
+        this.fileName = file.name
       })
-    } else {
-      document.querySelector(`input[data-testid="file"]`).value = null
-      this.fileUrl = null
-      this.fileName = null
-      window.alert('Seuls les fichiers de type "jpg", "jpeg" ou "png" sont autorisés.')
+      error.style.display = "none"
+    } else{
+      const test = this.document.querySelector(`input[data-testid="file"]`)
+      test.value=""
+      error.style.display="block"
     }
-
-
   }
-
-
-  handleSubmit(e) {
+  
+  handleSubmit = e => {
     e.preventDefault()
-    console.log('e.target.querySelector(`input[data-testid="datepicker"]`).value', e.target.querySelector(`input[data-testid="datepicker"]`).value)
     const email = JSON.parse(localStorage.getItem("user")).email
     const bill = {
       email,
@@ -63,8 +67,9 @@ export default class NewBill {
     this.onNavigate(ROUTES_PATH['Bills'])
   }
 
+   /* istanbul ignore next */
   // not need to cover this function by tests
-  createBill(bill) {
+  createBill = (bill) => {
     if (this.firestore) {
       this.firestore
       .bills()

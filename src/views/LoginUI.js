@@ -1,4 +1,3 @@
-
 export default () => {
 
   return(`
@@ -45,4 +44,3 @@ export default () => {
       </div>
   `)
 }
-  

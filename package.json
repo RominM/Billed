@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest --coverage --noStackTrace --silent --reporters default jest-html-reporter"
+    "test": "jest --coverage --noStackTrace --silent"
   },
   "jest": {
     "verbose": true,
