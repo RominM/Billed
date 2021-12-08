@@ -81,7 +81,7 @@
        icon2.addEventListener('click', handleShowTickets2)
        userEvent.click(icon2)
        expect(handleShowTickets2).toHaveBeenCalled()
- 
+  
        icon3.addEventListener('click', handleShowTickets3)
        userEvent.click(icon3)
        expect(handleShowTickets3).toHaveBeenCalled()
