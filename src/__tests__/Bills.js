@@ -6,15 +6,15 @@ import { localStorageMock } from "../__mocks__/localStorage.js" // causee localS
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {
     test("Then bill icon in vertical layout should be highlighted", () => {
-      // const html = BillsUI({ data: []})
-      // document.body.innerHTML = html
+      const html = BillsUI({ data: []})
+      document.body.innerHTML = html
       //to-do write expect expression
 
       // to call localStorage
-      Object.defineProperty(window, 'localStorage', { value: localStorageMock })// mock localStorage
-        window.localStorage.setItem('user', JSON.stringify({type: 'Employee'}))// Set user as Employee in localStorage
+      // Object.defineProperty(window, 'localStorage', { value: localStorageMock })// mock localStorage
+      //   window.localStorage.setItem('user', JSON.stringify({type: 'Employee'}))// Set user as Employee in localStorage
 
-        document.body.innerHTML = `<div id="root"></div>`;
+      //   document.body.innerHTML = `<div id="root"></div>`;
     });
 
 
