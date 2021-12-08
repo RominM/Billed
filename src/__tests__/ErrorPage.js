@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom-latest
+ */
+
 import { screen } from "@testing-library/dom"
 import ErrorPage from "../views/ErrorPage.js"
 

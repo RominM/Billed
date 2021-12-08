@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom-latest
+ */
+
 import { fireEvent, screen } from "@testing-library/dom"
 import userEvent from '@testing-library/user-event'
 import DashboardFormUI from "../views/DashboardFormUI.js"
