@@ -11,30 +11,30 @@ export default (height) => {
   if (user && user.type === 'Employee') {
     return (
       `
-      <div class='vertical-navbar' style='height: ${height}vh;'>
-        <div class='layout-title'> Billed </div>
-        <div id='layout-icon1' data-testid="icon-window">
-          ${WindowIcon}
-        </div>
-        <div id='layout-icon2' data-testid="icon-mail">
-          ${MailIcon}
-        </div>
-        <div id='layout-disconnect'>
-          ${DisconnectIcon}
-        </div>
-    </div>
-      `
-    ) 
+        <div class='vertical-navbar' style='height: ${height}vh;'>
+          <div class='layout-title'> Billed </div>
+          <div id='layout-icon1' data-testid="icon-window">
+            ${WindowIcon}
+          </div>
+          <div id='layout-icon2' data-testid="icon-mail">
+            ${MailIcon}
+          </div>
+          <div id='layout-disconnect'>
+            ${DisconnectIcon}
+          </div>
+      </div>
+        `
+    )
   } else {
     return (
       `
-      <div class='vertical-navbar' style='height: ${height}vh;'>
-        <div class='layout-title'> Billed </div>
-          <div id='layout-disconnect' data-testid='layout-disconnect'>
-            ${DisconnectIcon}
+        <div class='vertical-navbar' style='height: ${height}vh;'>
+          <div class='layout-title'> Billed </div>
+            <div id='layout-disconnect' data-testid='layout-disconnect'>
+              ${DisconnectIcon}
+            </div>
           </div>
-        </div>
-      `
+        `
     )
   }
 }
