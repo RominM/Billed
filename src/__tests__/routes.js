@@ -1,5 +1,5 @@
 /**
- * @jest-environment jsdom-latest
+ * @jest-environment jsdom
  */
 
 import { ROUTES, ROUTES_PATH } from "../constants/routes"
