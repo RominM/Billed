@@ -12,7 +12,7 @@ describe('Given I am connected as Employee', () => {
     const user = JSON.stringify({
       type: 'Employee'
     })
-    window.localStorage.setItem('user', user)
+    // window.localStorage.setItem('user', user)
     const html = VerticalLayout(120)
     document.body.innerHTML = html
     expect(screen.getByTestId('icon-window')).toBeTruthy()

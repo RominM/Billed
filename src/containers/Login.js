@@ -35,8 +35,8 @@ export default class Login {
   handleSubmitAdmin = e => {
     const user = {
       type: "Admin",
-      email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value,
-      password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
+      email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value, // change the employee by admin
+      password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value, // change the employee by admin
       status: "connected"
     }
     this.localStorage.setItem("user", JSON.stringify(user))

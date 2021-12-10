@@ -1,15 +1,3 @@
-BUGS :
-"ReferenceError: global is not defined"
-      => a priori du a un probleme de version dans le package Json.
-            => npm list jest devrait donner :
-                  mypackage@1.0.0 /Users/guoyunhe/Git/mypackage
-                        ├─┬ @alib/build-scripts@0.1.31
-                        │ └── jest@26.6.3 
-                        └── jest@27.0.4
-            => mon resultat :
-                  `-- jest@26.1.0
-                        => correspond bien à ma version de Jest
-
 
 ERREURS IDENTIFIE:
 
@@ -26,10 +14,3 @@ ERREURS IDENTIFIE:
       => handleSubmitAdmin
          => email & password querySelector the wrong input[data-testid]
 
-// all of documents,
-      => whene is a class
-         => change syntaxe
-         
-// OnNavigate ???
-
-// 
