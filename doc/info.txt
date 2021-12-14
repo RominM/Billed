@@ -24,7 +24,10 @@ WHAT IS TDD & BDD :
 
 - TDD : Test Driven Developpement est une methode de developpement d'ecrire des tests avant de developper la fonctionnalité(qui st demandé)
  afin de le faire echouer pour en suite rediger le minimum de code pour que ce test soit enfin valide.
- Incrementable ???
+ 
+ 1/ On ecrit du test qui echouer
+ 2/ On ecrit du code le plus simple possible pour faire passer le test
+ 3/ On refactorise le code afin de gagner en clareté et en "propreté"
 
 
 - BDD : Behavior Driven Developpement st la continuité du TDD mais ajout le principe des "scenarios" afin d'exprimer clairement et de façon 
@@ -32,3 +35,8 @@ litterale le choix du test.
       *Dans le cas où, Etant donné que, ...
       *Il faut que, dans ce cas, ...
       *(opt) et egalement, mais aussi, ...
+
+
+QU'EST CE QUE LE COVERAGE : 
+
+- Metrique de couverture et diagnostique du code. 
