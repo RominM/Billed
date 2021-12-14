@@ -2,14 +2,9 @@
  * @jest-environment jsdom
  */
 
-import { fireEvent, screen } from "@testing-library/dom"
-import userEvent from '@testing-library/user-event'
+import { screen } from "@testing-library/dom"
 import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
-import { ROUTES } from "../constants/routes"
-import Bills from "../containers/Bills.js"
-import { localStorageMock } from "../__mocks__/localStorage.js" // causee localStorage was not defined
-import DashboardFormUI from "../views/DashboardFormUI.js"
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on Bills Page", () => {

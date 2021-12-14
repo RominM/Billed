@@ -56,7 +56,6 @@ export default class Login {
     document.body.style.backgroundColor = "#fff"
   }
   /* istanbul ignore next */
-  // not need to cover this function by tests
   checkIfUserExists = (user) => {
     if (this.firestore) {
       this.firestore
@@ -76,7 +75,6 @@ export default class Login {
     }
   }
   /* istanbul ignore next */
-  // not need to cover this function by tests
   createUser = (user) => {
     if (this.firestore) {
       this.firestore
