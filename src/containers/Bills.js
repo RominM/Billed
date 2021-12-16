@@ -7,12 +7,15 @@ export default class {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
-    const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`)
-    if (buttonNewBill) buttonNewBill.addEventListener('click', this.handleClickNewBill)
+    // TEST 1
+    const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`);
+    if (buttonNewBill) buttonNewBill.addEventListener('click', this.handleClickNewBill);
+    // TEST 2
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
     if (iconEye) iconEye.forEach(icon => {
       icon.addEventListener('click', (e) => this.handleClickIconEye(icon))
     })
+    // need test
     new Logout({ document, localStorage, onNavigate })
   }
 
@@ -25,6 +28,7 @@ export default class {
     const imgWidth = Math.floor($('#modaleFile').width() * 0.5)
     $('#modaleFile').find(".modal-body").html(`<div style='text-align: center;'><img width=${imgWidth} src=${billUrl} /></div>`)
     $('#modaleFile').modal('show')
+    // until
   }
 
   /* istanbul ignore next */

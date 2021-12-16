@@ -31,6 +31,7 @@ export default class Login {
     }
     this.localStorage.setItem("user", JSON.stringify(user))
     const userExists = this.checkIfUserExists(user)
+    // need test
     if (!userExists) this.createUser(user)
     e.preventDefault()
     this.onNavigate(ROUTES_PATH['Bills'])
@@ -51,6 +52,7 @@ export default class Login {
     }
     this.localStorage.setItem("user", JSON.stringify(user))
     const userExists = this.checkIfUserExists(user)
+    // until
     if (!userExists) this.createUser(user)
     e.preventDefault()
     this.onNavigate(ROUTES_PATH['Dashboard'])
