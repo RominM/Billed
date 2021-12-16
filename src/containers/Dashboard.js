@@ -85,6 +85,7 @@ export default class {
     if (typeof $('#modaleFileAdmin1').modal === 'function') $('#modaleFileAdmin1').modal('show')
   }
 
+  // show tickets selected
   handleEditTicket(e, bill, bills) {
     if (this.counter === undefined || this.id !== bill.id) this.counter = 0
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
@@ -96,6 +97,7 @@ export default class {
       $('.dashboard-right-container div').html(DashboardFormUI(bill))
       $('.vertical-navbar').css({ height: '150vh' })
       this.counter ++
+      console.log('counter if : ' + this.counter);
     } else {
       $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
 
@@ -104,6 +106,7 @@ export default class {
       `)
       $('.vertical-navbar').css({ height: '120vh' })
       this.counter ++
+      console.log('counter else : ' + this.counter);
     }
     $('#icon-eye-d').click(this.handleClickIconEye)
     $('#btn-accept-bill').click((e) => this.handleAcceptSubmit(e, bill))
@@ -130,7 +133,9 @@ export default class {
     this.onNavigate(ROUTES_PATH['Dashboard'])
   }
 
+  // show all tickets of status
   handleShowTickets(e, bills, index) {
+    console.log('show tickets of status');
     if (this.counter === undefined || this.index !== index) this.counter = 0
     if (this.index === undefined || this.index !== index) this.index = index
     if (this.counter % 2 === 0) {
@@ -145,15 +150,25 @@ export default class {
       this.counter ++
     }
 
-    bills.forEach(bill => {
+    // 4th error [Bug Hunt] - Dashboard
+
+    /* BEFORE
+        bills.forEach(bill => {
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
+    */
+
+    // target all status to get the handleEditTickets fucntion
+    filteredBills(bills, getStatus(this.index)).forEach(bill => {
+      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+    })
+    // now the you can click on every tickets in all categories
 
     return bills
 
   }
 
-  // not need to cover this function by tests
+/* istanbul ignore next */
   getBillsAllUsers = () => {
     if (this.firestore) {
       return this.firestore
@@ -173,7 +188,7 @@ export default class {
     }
   }
     
-  // not need to cover this function by tests
+/* istanbul ignore next */
   updateBill = (bill) => {
     if (this.firestore) {
     return this.firestore
