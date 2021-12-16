@@ -151,7 +151,7 @@ export default class {
       this.counter++
     }
 
-    // 4th error [Bug Hunt] - Dashboard
+    // [Bug Hunt] - Dashboard
 
     /* BEFORE
         bills.forEach(bill => {

@@ -1,4 +1,5 @@
-import { ROUTES_PATH } from '../constants/routes.js'
+import { ROUTES_PATH
+} from '../constants/routes.js'
 export let PREVIOUS_LOCATION = ''
 
 // we use a class so as to test its methods in e2e tests
@@ -20,6 +21,7 @@ export default class Login {
     const formAdmin = this.document.querySelector(`form[data-testid="form-admin"]`)
     formAdmin.addEventListener("submit", this.handleSubmitAdmin)
   }
+
   handleSubmitEmployee = e => {
     const user = {
       type: "Employee",
@@ -39,9 +41,10 @@ export default class Login {
   }
 
   handleSubmitAdmin = e => {
+    // [Bug report] - Login
     const user = {
+      // change employee-email-input by admin-email-input
       type: "Admin",
-      // 1ere erreur [Bug report] - Login
       email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value,
       password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
       status: "connected"
@@ -55,6 +58,7 @@ export default class Login {
     PREVIOUS_LOCATION = this.PREVIOUS_LOCATION
     document.body.style.backgroundColor = "#fff"
   }
+
   /* istanbul ignore next */
   checkIfUserExists = (user) => {
     if (this.firestore) {
@@ -74,6 +78,7 @@ export default class Login {
       return null
     }
   }
+
   /* istanbul ignore next */
   createUser = (user) => {
     if (this.firestore) {

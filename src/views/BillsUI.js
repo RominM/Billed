@@ -20,6 +20,7 @@ const row = (bill) => {
 }
 
 const rows = (data) => {
+  // [Bug report] - Bills
   const antichrono = (a, b) => ((a.date < b.date) ? 1 : -1);
   return (data && data.length) ? data.sort(antichrono).map(bill => row(bill)).join("") : ""; // add .sort() methode
 }

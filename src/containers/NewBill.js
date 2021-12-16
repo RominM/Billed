@@ -43,7 +43,7 @@ export default class NewBill {
     const extension = fileName.split(".").pop()
     let error = document.getElementById("errorMessagId")
 
-    // 3rd error [Bug Hunt] - Bills
+    // [Bug Hunt] - Bills
     if (extension === 'jpg' || extension === 'jpeg' || extension === 'png') {
       this.firestore
         .storage
