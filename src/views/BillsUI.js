@@ -16,12 +16,12 @@ const row = (bill) => {
         ${Actions(bill.fileUrl)}
       </td>
     </tr>
-    `)
-  }
+  `)
+}
 
 const rows = (data) => {
   const antichrono = (a, b) => ((a.date < b.date) ? 1 : -1);
-  return (data && data.length) ? data.sort(antichrono).map(bill => row(bill)).join("") : "" // add .sort() methode
+  return (data && data.length) ? data.sort(antichrono).map(bill => row(bill)).join("") : ""; // add .sort() methode
 }
 
 export default ({ data: bills, loading, error }) => {
