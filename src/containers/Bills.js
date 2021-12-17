@@ -7,9 +7,11 @@ export default class {
     this.document = document
     this.onNavigate = onNavigate
     this.firestore = firestore
+
     // TEST 1
     const buttonNewBill = document.querySelector(`button[data-testid="btn-new-bill"]`);
     if (buttonNewBill) buttonNewBill.addEventListener('click', this.handleClickNewBill);
+
     // TEST 2
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
     if (iconEye) iconEye.forEach(icon => {
@@ -20,6 +22,7 @@ export default class {
   }
 
   handleClickNewBill = e => {
+    console.log('ici');
     this.onNavigate(ROUTES_PATH['NewBill'])
   }
 
@@ -43,7 +46,6 @@ export default class {
         const bills = snapshot.docs
           .map(doc => {
             try {
-              console.log('hello');
               return {
                 ...doc.data(),
                 date: formatDate(doc.data().date),
