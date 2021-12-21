@@ -19,6 +19,7 @@ const row = (bill) => {
   `)
 }
 
+// TEST 2
 const rows = (data) => {
   // [Bug report] - Bills
   const antichrono = (a, b) => ((a.date < b.date) ? 1 : -1);

@@ -36,7 +36,6 @@ describe("Given I am connected as an employee", () => {
         firestore: null,
         localStorage: window.localStorage,
       })
-      // get handleSubmit function
       const handleChangeFile = jest.fn(newBill.handleChangeFile)
       const file = screen.getByTestId("file")
       file.addEventListener("change", handleChangeFile)
@@ -47,7 +46,9 @@ describe("Given I am connected as an employee", () => {
           })],
         }
       })
+      // get handleSubmit function
       expect(handleChangeFile).toBeCalled()
+      // [Bug Hunt] - Bills
       expect(document.querySelector("#errorMessagId").style.display).toBe("block");
     })
 
