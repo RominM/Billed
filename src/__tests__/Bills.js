@@ -76,6 +76,49 @@ describe("Given I am connected as an employee", () => {
       expect(handleClickIconEye).toHaveBeenCalled()
 
     })
+    // TEST 3.2
+    test('then a modal should not open', () => {
+
+      document.body.innerHTML = '<div></div>'
+
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({
+          pathname
+        })
+      }
+
+      /**
+       * document.qurySelectorAll return un objet de type NodeList : il est toujours défini et ne rentre jamais dans le "else"
+          Il foaut donc forcer un faux else 
+      */
+      jest.spyOn(document, 'querySelectorAll').mockReturnValue(null)
+
+      const bill = new Bills({
+        document,
+        onNavigate,
+        firestore: null,
+        localStorage: window.localStorage
+      })
+    
+      $.fn.modal = jest.fn()
+
+      const handleClickIconEye = jest.fn()
+   
+     try {
+      const button = screen.getAllByTestId('icon-eye')[0]
+      bill.handleClickIconEye = handleClickIconEye;
+      /*handleClickIconEye.mockImplementation((e) => {
+        e.preventDefault()
+        bill.handleClickIconEye(button)
+      })
+      button.addEventListener('click', handleClickIconEye)*/
+      fireEvent.click(button)
+      
+     } catch(e) {
+      expect(handleClickIconEye).not.toHaveBeenCalled()
+     }
+
+    })  
   })
 
   describe('when i click on the make new Bill Button', () => {
@@ -111,7 +154,7 @@ describe("Given I am connected as an employee", () => {
       expect(screen.getAllByText("Envoyer une note de frais")).toBeTruthy()
     })
   })
-  //test d'intégration GET
+  //test d'intégration GET [is a critical part]
   describe('Given I am a user connected as Admin', () => {
     // TEST 5
 

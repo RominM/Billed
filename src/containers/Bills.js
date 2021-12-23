@@ -13,9 +13,12 @@ export default class {
 
     // TEST 3
     const iconEye = document.querySelectorAll(`div[data-testid="icon-eye"]`)
-    if (iconEye) iconEye.forEach(icon => {
-      icon.addEventListener('click', (e) => this.handleClickIconEye(icon))
-    })
+
+    if (iconEye){
+      iconEye.forEach(icon => {
+        icon.addEventListener('click', (e) => this.handleClickIconEye(icon))
+      })
+    }
     new Logout({ document, localStorage, onNavigate })
   }
 
