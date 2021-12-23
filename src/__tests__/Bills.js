@@ -89,7 +89,7 @@ describe("Given I am connected as an employee", () => {
 
       /**
        * document.qurySelectorAll return un objet de type NodeList : il est toujours défini et ne rentre jamais dans le "else"
-          Il foaut donc forcer un faux else 
+          Il faut donc forcer un faux else 
       */
       jest.spyOn(document, 'querySelectorAll').mockReturnValue(null)
 
