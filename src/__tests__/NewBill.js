@@ -49,7 +49,7 @@ describe("Given I am connected as an employee", () => {
       // get handleSubmit function
       expect(handleChangeFile).toBeCalled()
       // [Bug Hunt] - Bills
-      expect(document.querySelector("#errorMessagId").style.display).toBe("block");
+      expect(document.querySelector("#errorMessagId").style.display).toBe("block"); // If file have '.txt' extension, the errorMessage should be in display "block"
     })
 
 
@@ -99,8 +99,8 @@ describe("Given I am connected as an employee", () => {
         }
       })
       // test
-      expect(file.files.length).toEqual(1);
-      expect(document.querySelector("#errorMessagId").style.display).toBe("none");
+      expect(file.files.length).toEqual(1); // verify that we have an extension like .jpg
+      expect(document.querySelector("#errorMessagId").style.display).toBe("none"); // The error message should be in display "none"
     })
   })
 
