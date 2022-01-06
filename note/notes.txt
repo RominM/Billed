@@ -1,0 +1,21 @@
+Tuesday, I removed
+
+/*
+* jest environement
+*/
+
+in the src/__test__/route.js to get a 100% of coverage
+
+======================================================
+
+Today (Thursday), the coverage is at 50%(???).
+
+I add !!!
+
+/*
+* jest environement
+*/
+
+in the src/__test__/route.js to get a 100% of coverage
+
+?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!
