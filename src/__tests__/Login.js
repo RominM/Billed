@@ -4,8 +4,13 @@
 
 import LoginUI from "../views/LoginUI"
 import Login from '../containers/Login.js'
-import { ROUTES } from "../constants/routes"
-import { fireEvent, screen } from "@testing-library/dom"
+import {
+  ROUTES
+} from "../constants/routes"
+import {
+  fireEvent,
+  screen
+} from "@testing-library/dom"
 
 describe("Given that I am a user on login page", () => {
   describe("When I do not fill fields and I click on employee button Login In", () => {
@@ -57,6 +62,53 @@ describe("Given that I am a user on login page", () => {
   })
 
   describe("When I do fill fields in correct format and I click on employee button Login In", () => {
+    test("if user doesn't exist, it should be create", () => {
+     // Given
+      // localStorage should be populated with form data
+      Object.defineProperty(window, "localStorage", {
+        value: {
+          getItem: jest.fn(() => null),
+          setItem: jest.fn(() => null)
+        },
+        writable: true
+      })
+
+      // we have to mock navigation to test it
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({
+          pathname
+        })
+      }
+
+      let PREVIOUS_LOCATION = ''
+
+      const firebase = jest.fn()
+
+      const login = new Login({
+        document,
+        localStorage: window.localStorage,
+        onNavigate,
+        PREVIOUS_LOCATION,
+        firebase
+      })
+
+      jest.spyOn(login, 'checkIfUserExists').mockReturnValue(false)
+      jest.spyOn(login, 'createUser')
+      const preventDefault = jest.fn()
+
+      const e = {
+        preventDefault: preventDefault,
+        target: { querySelector: jest.fn().mockReturnValue({ value: '' }) }
+      }
+
+      // When
+      login.handleSubmitAdmin(e) 
+
+      // Then
+      expect(login.createUser).toBeCalled();
+      expect(preventDefault).toBeCalled();
+    })
+
     test("Then I should be identified as an Employee in app", () => {
       document.body.innerHTML = LoginUI()
       const inputData = {
