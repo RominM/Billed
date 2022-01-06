@@ -1,6 +1,10 @@
-import { screen } from "@testing-library/dom"
+import {
+  screen
+} from "@testing-library/dom"
 import DashboardFormUI from "../views/DashboardFormUI.js"
-import { formatDate } from "../app/format.js"
+import {
+  formatDate
+} from "../app/format.js"
 
 const bill = {
   "id": "47qAXb6fIm2zOKkLzMro",
@@ -72,4 +76,3 @@ describe('Given I am connected as an Admin and I am on Dashboard Page', () => {
     })
   })
 })
-
