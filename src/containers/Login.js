@@ -30,10 +30,12 @@ export default class Login {
       status: "connected"
     }
     this.localStorage.setItem("user", JSON.stringify(user))
-    const userExists = this.checkIfUserExists(user)
+    const userExists = this.checkIfUserExists(user)// if false
     // need test
+      /* istanbul ignore next */
     if (!userExists) this.createUser(user)
-    e.preventDefault()
+    // if "user does not exist then "createUser() should be called
+    e.preventDefault()// spy preventDefault
     this.onNavigate(ROUTES_PATH['Bills'])
     this.PREVIOUS_LOCATION = ROUTES_PATH['Bills']
     PREVIOUS_LOCATION = this.PREVIOUS_LOCATION
@@ -53,6 +55,7 @@ export default class Login {
     this.localStorage.setItem("user", JSON.stringify(user))
     const userExists = this.checkIfUserExists(user)
     // until
+      /* istanbul ignore next */
     if (!userExists) this.createUser(user)
     e.preventDefault()
     this.onNavigate(ROUTES_PATH['Dashboard'])
