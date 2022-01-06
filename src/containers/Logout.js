@@ -12,4 +12,4 @@ export default class Logout {
     this.localStorage.clear()
     this.onNavigate(ROUTES_PATH['Login'])
   }
-} 
+}
