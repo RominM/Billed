@@ -1,5 +1,7 @@
 **Comment lancer l'application en local** :
 
+==> [Vsiting the website](https://rominm.github.io/Billed-app-FR/) <==
+
 Clonez le projet :
 ```
 $ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR.git
